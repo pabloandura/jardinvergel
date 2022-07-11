@@ -7,7 +7,7 @@ const HeroContainer = () => {
 const heroList = [
     {
         key:'estudios',
-        mainText: 'Estudios Jardin',
+        mainText: 'Estudio Jardin',
         smallerText: 'estudios de grabacion, mezcla y mastering',
         imagen:'jardin.jpg'
     },
@@ -23,7 +23,7 @@ const heroList = [
         <div className='hero-container'>
         {
             heroList.map((hero, index) => {
-                return <Hero key={hero.key} index={index} mensaje={hero.mainText} imagen={hero.imagen}/>
+                return <Hero descrip={hero.smallerText} key={hero.key} index={index} mensaje={hero.mainText} imagen={hero.imagen}/>
                })
         }
         </div>
