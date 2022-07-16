@@ -5,6 +5,7 @@ import App from './App';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProyectosContainer from './components/proyectos/ProyectosContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,8 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<App />}/>
+        <Route path='/' element={<App />} />
+        <Route path='/proyectos' element={<ProyectosContainer />} />
       </Routes>
       <Footer />
     </BrowserRouter>

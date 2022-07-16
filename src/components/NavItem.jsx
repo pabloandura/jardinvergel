@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom'
 
-const NavItem = ({nombre, ruta}) => {
+const NavItem = ({nombre, ruta, variable, func, estado}) => {
     return(
-        <Link className='nav-item' to={ruta}>
+        <Link onClick={() => {
+            func(variable)
+        }} className={
+            estado === variable
+            ?
+            'nav-item-active'
+            :
+            'nav-item'
+            } to={ruta}>
             {nombre}
         </Link>
     )

@@ -1,32 +1,54 @@
+import { useState } from "react"
 import NavItem from "./NavItem"
 
 const Header = () => {
 
-    const navegacion = [
+    const [nav, setNav] = useState('home');
+
+    const handleClick = (nombre) => {
+        setNav(nombre);
+        console.log(nav);
+    }
+
+    const opcionesMenu = [
         {
             nombre: 'Home',
-            ruta: '/',
-            key: '100'
+            variable: 'home',
+            key: '100',
+            ruta: '/'
         },
         {
-            nombre: 'Artistas',
-            ruta: '/artistas',
-            key: '200'
+            nombre: `Equipo Jardín`,
+            variable: 'equipoJardin',
+            key: '200',
+            ruta: '/equipo-jardin'
         },
         {
             nombre: 'Proyectos',
-            ruta: '/discos',
-            key: '300'
+            variable: 'proyectos',
+            key: '300',
+            ruta: '/proyectos'
         }
     ]
 
+
     return(
         <div className="nav-container">
-            <h3>
-                jardin|vergel
-            </h3>
+            <div className="nav-logo-container">
+                <img alt='a network of roots' src='./images/logoJardin.png' className="nav-logo"/>
+                <h2 className="nav-logo-text">
+                    jard&iacute;n | vergel
+                </h2>
+            </div>
             {
-                navegacion.map( nav => {return <NavItem key={nav.key} nombre={nav.nombre} ruta={nav.ruta} />} )
+                opcionesMenu.map( tab => <NavItem 
+                    key={tab.key} 
+                    nombre={tab.nombre}
+                    variable={tab.variable} 
+                    ruta={tab.ruta} 
+                    estado={nav}
+                    func={handleClick} 
+                /> )
             }
         </div>
     )

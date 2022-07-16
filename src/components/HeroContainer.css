@@ -57,14 +57,101 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: lightblue;
+    height:160px;
 }
 
 .nav-item {
     background-color: rgba(255, 255, 255, 0.444);
     padding: 5px;
-    box-shadow: 3px 3px;
+    box-shadow: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
 
+.nav-item:hover {
+    background-color: lightgray;
+}
+
+.nav-item-active {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.444);
+    padding: 5px;
+    box-shadow: 10px 10px rgb(62, 236, 255);
+    color: black;
+}
+
+.nav-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo {
+    height:150px;
+    left:0;
+    margin-right: 10px;
+    filter:drop-shadow(-15px -5px 25px #052d04)
+}
+
+.nav-logo-text {
+    z-index: 1;
+    filter:drop-shadow(-15px -5px 15px #052d04)
+}
+
+.proyectos-container {
+    display:flex;
+    position: relative;
+}
+
+.proyectos-item {
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    box-shadow: 4px 4px black;
+}
+
+.proyectos-item-imagen {
+    object-fit: cover;
+    height: 100%;
+    width:100%;
+}
+
+.proyectos-item-title {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-weight: 500;
+    margin-left: 5px;
+    padding: 2px;
+    text-shadow: 2px 2px black;
+}
+
+.proyectos-item-equipo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.proyectos-item-equipo-integrante {
+    background-color: orange;
+    color: white;
+    font-weight: 500;
+    margin-left: 5px;
+    padding: 7px;
+    border-radius: 50%;
+    border: 2px solid black;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+
+}
+
+.proyectos-page {
+    display:flex;
+    justify-content: center;
 }
 
 .footer {
